@@ -1,9 +1,10 @@
-import React from "react";
-import { cartProductPrice } from "../AppContext";
+import React, { useContext } from "react";
+import { CartContext, cartProductPrice } from "../AppContext";
 import Trash from "../icons/Trash";
 import Image from "next/image";
 
 const CartProduct = ({product,onRemove}) => {
+  const { cartProducts, removeCartProduct } = useContext(CartContext);
   return (
     <div
       key={product.name}
@@ -30,14 +31,15 @@ const CartProduct = ({product,onRemove}) => {
         )}
       </div>
 
-      <div className="text-lg font-semibold text-base">
+      <div className="font-semibold text-base">
         Rs/- {cartProductPrice(product)}
       </div>
       {!!onRemove &&
       <div className="ml-2">
         <button
           type="button"
-          onClick={() => onRemove(index)}
+          onClick={onRemove}
+         // onClick={(index) => removeCartProduct(index)}
           className="p-2"
           >
           <Trash />

@@ -56,6 +56,7 @@ const router = useRouter()
         
       })
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
 
@@ -99,7 +100,7 @@ const router = useRouter()
           });
         }
       );
-      console.log(uploadTask);
+      //console.log(uploadTask);
       
     };
     file && uploadFile();

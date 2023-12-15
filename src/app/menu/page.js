@@ -15,7 +15,7 @@ const MenuPage = () => {
 
     }, [])
 
-    console.log(categories, menuItems)
+    //console.log(categories, menuItems)
   return (
     <section className='mt-8'>
         {categories?.length>0 && categories.map(c=>(
